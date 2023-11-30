@@ -1,5 +1,6 @@
 import { ThemeToggle } from '@/src/theme/ThemeToggle'
 import React from 'react'
+import { LoginButton } from './auth/LoginButton'
 
 export const Header = async() => {
   return (
@@ -23,7 +24,7 @@ export const Header = async() => {
           <a href="#" className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">CONTACT</a>
         </div>
         <div className="hidden md:flex items-center">
-          <a href="#" className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">LOGIN</a>
+          <LoginButton />
           <a href="#" className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">SIGNUP</a>
         </div>
         <ThemeToggle />
