@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getAuthSession } from "@/lib/auth";
+import CardProfile from "@/src/feature/layout/CardProfile";
 import Image from "next/image";
 
 export default async function Home() {
@@ -12,8 +13,9 @@ export default async function Home() {
         {JSON.stringify(session, null, 2)}
       </p>
       <Button variant="success">Click me</Button>
-      <Input className="w-55 mt-5" placeholder="Enter your name" />
+      <Input className="mt-5 w-55" placeholder="Enter your name" />
     </div>
+    <CardProfile />
     </>
   );
 }
