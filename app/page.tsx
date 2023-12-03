@@ -9,11 +9,9 @@ export default async function Home() {
   return (
     <>
     <div className="m-4">
-      <p>
-        {JSON.stringify(session, null, 2)}
-      </p>
+      
       <Button variant="success">Click me</Button>
-      <Input className="mt-5 w-55" placeholder="Enter your name" />
+      <Input className="w-56 mt-10" placeholder="Enter your name" />
     </div>
     <CardProfile />
     </>

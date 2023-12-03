@@ -2,12 +2,13 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { getAuthSession } from '@/lib/auth';
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Typography } from '@/components/ui/Typography';
 
 
 export default async function CardProfile  (){
   const session = await getAuthSession();
   return (
-    <Card>
+    <Card className='items-center justify-center w-60'>
       <Avatar>
         <AvatarImage src={session?.user.image} />
         <AvatarFallback>CN</AvatarFallback>
@@ -15,13 +16,13 @@ export default async function CardProfile  (){
 
       <CardHeader>
         <CardTitle>{session?.user.name}</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardDescription>{session?.user.id}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Card Content</p>
+        <p>{session?.user.email}</p>
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        <p>{session?.expires}</p>
       </CardFooter>
     </Card>
   );

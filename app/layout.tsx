@@ -5,6 +5,8 @@ import { ThemeProvider } from '@/src/theme/ThemeProvider'
 import clsx from 'clsx'
 import { Header } from '@/src/feature/layout/Header'
 import { Footer } from '@/src/feature/layout/Footer'
+import { Providers } from './Providers'
+import { TailwindIndicator } from '@/components/TailwindIndicator'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,16 +24,12 @@ export default function RootLayout({
     <html lang="en" className='h-full'>
       
       <body className={clsx(inter.className, 'bg-background h-full')}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem={true}
-          
-        >
+        <Providers>
           <Header />
         {children}
         <Footer />
-        </ThemeProvider>
+        <TailwindIndicator />
+        </Providers>
       </body>
       
     </html>
