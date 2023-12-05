@@ -27,21 +27,21 @@ export const getAuthSession = async () => {
   return session;
 };
 
-export const getRequiredAuthSession = async (
-  ...parameters: ParametersGetServerSession
-) => {
-  const session = await getServerSession(...parameters, authOptions);
+export const getRequiredAuthSession = async () =>
+  // ...parameters: ParametersGetServerSession
+  {
+    const session = await getServerSession(authOptions);
 
-  if (!session?.user.id) {
-    throw new Error("Unauthorized");
-  }
+    if (!session?.user.id) {
+      throw new Error("Unauthorized");
+    }
 
-  return session as {
-    user: {
-      id: string;
-      email?: string;
-      image?: string;
-      name?: string;
+    return session as {
+      user: {
+        id: string;
+        email?: string;
+        image?: string;
+        name?: string;
+      };
     };
   };
-};

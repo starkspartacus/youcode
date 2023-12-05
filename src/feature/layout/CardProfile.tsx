@@ -24,7 +24,7 @@ export default async function CardProfile() {
     <Card className="items-center justify-center w-60">
       <div className="flex justify-between">
         <Avatar>
-          <AvatarImage src={session?.user.image} />
+          <AvatarImage src={`${session?.user.image}`} />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <Link href="/admin/courses">
