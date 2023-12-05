@@ -1,8 +1,13 @@
+
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { getAuthSession } from '@/lib/auth';
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Typography } from '@/components/ui/Typography';
+import { Button } from '@/components/ui/button';
+import { signIn, signOut } from 'next-auth/react';
+import { LogOutButton } from './auth/LogOutButton';
 
 
 export default async function CardProfile  (){
@@ -24,6 +29,7 @@ export default async function CardProfile  (){
       <CardFooter>
         <p>{session?.expires}</p>
       </CardFooter>
+      <LogOutButton />
     </Card>
   );
 }

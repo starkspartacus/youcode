@@ -34,6 +34,7 @@ import {
   UserPlus,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 
 export const LoginButton = () => {
   const { data: session } = useSession();
@@ -45,22 +46,22 @@ export const LoginButton = () => {
             <Button >{session.user.name}</Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <Link href="/">Home</Link>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <User className="w-4 h-4 mr-2" />
-                <span>Profile</span>
+                <Link href="/account">Mon compte</Link>
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CreditCard className="w-4 h-4 mr-2" />
-                <span>Billing</span>
+                <Link href="/admin">Admin</Link>
                 <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Settings className="w-4 h-4 mr-2" />
-                <span>Settings</span>
+                <Link href="/account/settings">Settings</Link>
                 <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
