@@ -49,9 +49,17 @@ model User {
   email         String?   @unique
   emailVerified DateTime? @map("email_verified")
   image         String?
+  username String? @unique
+  bio String?
+  link String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
   accounts      Account[]
   sessions      Session[]
   courses       Course[]
+
+  
 
   @@map("users")
 }
